@@ -10,6 +10,14 @@ const scores = [
   { 이름: 'Susan', 국어: 90, 영어: 90, 수학: 80, 과학:90},
   { 이름: 'Sue', 국어: 90, 영어: 90, 수학: 80, 과학:90}
 ]
+
+const sources = [0, 1, 2, 3]
+temp = []
+for (let item of source){
+  temp.push(item*2)
+}
+
+sources.map(item=>(item*2))   //위에5줄과 이 1줄이 같은 결과
 // let numbers = [ 0, 1, 2, 3]
 
 // let newScores = numbers.map(item=>{return item*2})
