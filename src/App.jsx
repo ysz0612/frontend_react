@@ -11,13 +11,6 @@ const scores = [
   { 이름: 'Sue', 국어: 90, 영어: 90, 수학: 80, 과학:90}
 ]
 
-const sources = [0, 1, 2, 3]
-temp = []
-for (let item of source){
-  temp.push(item*2)
-}
-
-sources.map(item=>(item*2))   //위에5줄과 이 1줄이 같은 결과
 // let numbers = [ 0, 1, 2, 3]
 
 // let newScores = numbers.map(item=>{return item*2})
@@ -38,23 +31,25 @@ function App() {
     <table>
       
       <tr>
-        <th>이름</th>
-        <th>국어</th>
-        <th>영어</th>
-        <th>수학</th>
-        <th>과학</th>
+        {
+          Object.keys(scores[0]).map(key=>(
+            <th>{key}</th>
+          ))
+        }
+        
       </tr>
-      {[0, 1, 2, 3].map(idx => 
+      {scores.map(item => 
         (
           <tr>
-          <td>{scores[0].이름}</td>,
-          <td>{scores[0].국어}</td>,
-          <td>{scores[0].영어}</td>,
-          <td>{scores[0].수학}</td>,
-          <td>{scores[0].과학}</td>
+          {
+            Object.values(item).map(
+              (value) => (<td>{value}</td>)
+            )
+          }
         </tr>
       )
-}
+    )
+  }
     </table>
   )
 }
