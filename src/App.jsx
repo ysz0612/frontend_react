@@ -22,21 +22,24 @@ const style ={
 
 function App() {
   const handleChange = (event)=>{
-   console.log(event.target.name)
+   console.log(event.target)
+  }
+  const handleSubmit = (event) => {
+
   }
   return (
-    <form> 
+    <form onSubmit={handleSubmit}> 
        <div>이름 <input
           type="text"
           name="이름"
-          value=""
+          value="john"
           onChange={handleChange}
           />
         </div>
        <div>국어<input
           type="number"
           name="국어"
-          value=""
+          value="90"
           onChange={handleChange}
           />
         </div>
