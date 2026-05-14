@@ -1,4 +1,5 @@
 import './App.css'
+import { useState } from 'react'
 
 const style ={
   width: "500px",
@@ -8,6 +9,8 @@ const style ={
   justifyContent: "center",
   alignItems: "center"
 }
+
+
 // let numbers = [ 0, 1, 2, 3]
 
 // let newScores = numbers.map(item=>{return item*2})
@@ -20,9 +23,22 @@ const style ={
 
 // {console.log(newScores)}
 
+const initialInfo ={
+  이름: "",
+  국어: null,
+  영어: null,
+  수학: null,
+  과학: null,
+}
+
 function App() {
+  const [info, setInfo] = useState(initialInfo)
+
   const handleChange = (event)=>{
-   console.log(event.target)
+        setInfo((prev)=>(
+          {...prev, 이름: event.target.value}
+        ))
+
   }
   const handleSubmit = (event) => {
 
@@ -32,36 +48,36 @@ function App() {
        <div>이름 <input
           type="text"
           name="이름"
-          value="john"
+          value={info.이름}
           onChange={handleChange}
           />
         </div>
        <div>국어<input
           type="number"
           name="국어"
-          value="90"
-          onChange={handleChange}
+          value={info.국어}
+          // onChange={handleChange}
           />
         </div>
        <div>영어<input
           type="number"
           name="영어"
-          value=""
-          onChange={handleChange}
+          value={info.영어}
+          // onChange={handleChange}
           />
         </div>
        <div>수학<input
           type="number"
           name="수학"
-          value=""
-          onChange={handleChange}
+          value={info.수학}
+          // onChange={handleChange}
           />
         </div>
        <div>과학<input
           type="number"
           name="과학"
-          value=""
-          onChange={handleChange}
+          value={info.과학}
+          // onChange={handleChange}
           />
         </div>
 
