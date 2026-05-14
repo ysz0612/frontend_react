@@ -25,7 +25,7 @@ function App() {
    console.log(event.target.name)
   }
   return (
-    <form>
+    <form> 
        <div>이름 <input
           type="text"
           name="이름"
